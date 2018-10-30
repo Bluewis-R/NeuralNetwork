@@ -1,5 +1,7 @@
 #include <iostream>
 #include <Windows.h>
+#include <vector>
+#include <cmath>
 
 int signFunction(int x, float _theta, float _delta);
 int stepFunction(float x, float _theta, float _delta);
@@ -20,7 +22,7 @@ float w[3] = { 0.7f, 0.2f, 0.6f };
 int main()
 {
 	neuronOne();
-
+	//multiNeuron();
 
 	system("PAUSE");
 	return 0;
@@ -132,27 +134,6 @@ int stepFunction(float x, float _theta, float _delta)
 	std::cout << "MEGA-ERROR";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 int signFunction(int x, float _theta, float _delta)
 {
 	if (((float)x <= _theta - _delta))
@@ -170,5 +151,73 @@ float SigmoidFunction(float _x, float _theta)
 {
 return (1 / (1 + pow(e, -(_x - _theta))));
 }
-
 */
+
+
+void multiNeuron()
+{
+	//initiating variables
+	int itterations = 100000;
+	
+	float weight1_3 = 0.5f;
+	float weight1_4 = 0.9f;
+	float weight3_5 = -1.2f;
+	float weight2_3 = 0.4f;
+	float weight2_4 = 1.0f;
+	float weight4_5 = 1.1f;
+
+	float theta3 = 0.8f;
+	float theta4 = 0.4f;
+	float theta5 = 0.3f;
+	float alpha = 0.1f;
+
+	int x[3][4];
+	int Yd5[4];
+	float X[5];
+	float Y[5];
+	float e[5];
+
+	x[1][1] = 1;
+	x[1][2] = 0;
+	x[1][3] = 1;
+	x[1][4] = 0;
+	x[2][1] = 1;
+	x[2][2] = 1;
+	x[2][3] = 0;
+	x[2][4] = 0;
+	Yd5[1] = 0;
+	Yd5[2] = 1;
+	Yd5[3] = 1;
+	Yd5[4] = 0;
+
+
+	//code
+	int p = 0;
+	while(p <= itterations - 4)
+	{
+		float EpochSumError = 0;
+		for (int i = p % 4; i < 3; i++)
+		{
+			std::cout << p << std::endl;
+			//neuron 3
+			X[3] = (x[1][i] * weight1_3) + (x[2][i] * weight2_3);
+			Y[3] = 1 / ( 1 + pow(exp(1), -(X[3] - theta3) ));
+
+			//neuron 4
+			X[4] = (x[1][i] * weight1_4) + (x[2][i] * weight2_4);
+			Y[4] = 1 / (1 + pow(exp(1), -(X[4] - theta4)));
+
+			//neuron 5
+			X[5] = (x[1][i] * weight3_5) + (x[2][i] * weight4_5);
+			Y[5] = 1 / (1 + pow(exp(1), -(X[5] - theta5)));
+
+
+			//	Back propergating the error
+			// N5 error
+			e[5] = Yd5[i] - Y[i];
+			Delta = 
+		}
+	}
+		
+
+}

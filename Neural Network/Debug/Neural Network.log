@@ -1,0 +1,6 @@
+﻿  main.cpp
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(200): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(204): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(208): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(213): error C2065: 'e': undeclared identifier
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(215): error C2143: syntax error: missing ';' before '}'
