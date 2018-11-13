@@ -1,6 +1,7 @@
 ﻿  main.cpp
-\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(200): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(204): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(208): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(213): error C2065: 'e': undeclared identifier
-\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(215): error C2143: syntax error: missing ';' before '}'
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(153): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(215): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(219): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(223): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+\\bournemouth.ac.uk\data\student\home\scitech\s5063237\desktop\neuralnetwork\neural network\main.cpp(148): warning C4715: 'signFunction': not all control paths return a value
+  Neural Network.vcxproj -> \\bournemouth.ac.uk\data\student\home\SciTech\s5063237\Desktop\NeuralNetwork\Debug\Neural Network.exe

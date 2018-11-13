@@ -6,6 +6,7 @@
 int signFunction(int x, float _theta, float _delta);
 int stepFunction(float x, float _theta, float _delta);
 void neuronOne();
+void multiNeuron();
 /*
 class stepType {
 public:
@@ -21,8 +22,8 @@ float w[3] = { 0.7f, 0.2f, 0.6f };
 
 int main()
 {
-	neuronOne();
-	//multiNeuron();
+	//neuronOne();
+	multiNeuron();
 
 	system("PAUSE");
 	return 0;
@@ -173,7 +174,7 @@ void multiNeuron()
 
 	float theta[6];
 	theta[3] = 0.8f;
-	theta[4] = 0.4f;
+	theta[4] = -0.1f;
 	theta[5] = 0.3f;
 	float alpha = 0.1f;
 
@@ -183,6 +184,7 @@ void multiNeuron()
 	float Y[6];
 	float error[6];
 	float delta[6];
+	float te5;
 
 	x[1][1] = 1;
 	x[1][2] = 0;
@@ -202,12 +204,12 @@ void multiNeuron()
 
 	//code
 	int p = 0;
-	while(p <= itterations - 4)
+	while(p <= (itterations - 4))
 	{
-		float EpochSumError = 0;
-		for (int i = p % 4; i < 3; i++)
+		float EpocSumError = 0;
+		for (int i = (p % 4)+1; i < 5; i++)
 		{
-			std::cout << p << std::endl;
+			std::cout <<"p : " << p << std::endl;
 			//neuron 3
 			X[3] = (x[1][i] * weights[1][3]) + (x[2][i] * weights[2][3]);
 			Y[3] = 1 / ( 1 + pow(exp(1), -(X[3] - theta[3]) ));
@@ -223,7 +225,7 @@ void multiNeuron()
 
 			//	Back propergating the error
 			// N5 error
-			error[5] = Yd5[i] - Y[i];
+			error[5] = Yd5[i] - Y[5];
 			delta[5] = Y[5] * (1 - Y[5])*error[5];
 			weightsCurrent[3][5] = weights[3][5];
 			weightsCurrent[4][5] = weights[4][5];
@@ -250,9 +252,17 @@ void multiNeuron()
 			tY[3] = SigmoidFunction(tX[3], theta[3]);
 			tX[4] = (x[1][i] * weights[1][4]) + (x[2][i] * weights[2][4]);
 			tY[4] = SigmoidFunction(tX[4], theta[4]);
-			tX[5] = (ty[3] * weights[1][4]) + (x[2][i] * weights[2][4]);
-			tY[5] = SigmoidFunction(tX[4], theta[4]);
+			tX[5] = (tY[3] * weights[3][5]) + (tY[4] * weights[4][5]);
+			tY[5] = SigmoidFunction(tX[5], theta[5]);
+			te5 = Yd5[i] - tY[5];
+			//Squared error
+			EpocSumError += pow(te5, 2);
+			p += 1;
+
+			std::cout << "epoch Error : " << EpocSumError << std::endl;
 		}
+		//training end goes here
+				
 	}
 		
 
